@@ -13,14 +13,14 @@ def check_availability():
 
         load_dotenv()
 
-        TWILIO_ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID')
-        TWILIO_AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN')
+        TWILIO_ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID') # your twilio account sid
+        TWILIO_AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN') # your twilio account token
         client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
         message = client.messages.create(
-            body='Server is down!',  # текст сообщения
-            sms_sender=os.getenv('sms_sender'),  # номер, который был получен
-            sms_receiver=os.getenv('sms_receiver'),  # номер, на который придёт sms
+            body='Server is down!',  # sms body
+            sms_sender=os.getenv('sms_sender'),  # phone number, received on twilio
+            sms_receiver=os.getenv('sms_receiver'),  # phone number on which sms will arrive
             )
     else:
         logging.info('Server is available')

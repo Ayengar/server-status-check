@@ -3,7 +3,7 @@ in order to work it needs:
 
 1)registration on twilio
 
-2)installed modules: twilio, requests, twisted
+2)installed modules: twilio, requests, twisted, dotenv
 
 3).env file in the same dir as python file, with your information.
 
